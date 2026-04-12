@@ -3,10 +3,10 @@ const person =  {
     middleName: "Crey",
     lastName: "emmaneul",
     fullName: function() {
-        console.log(fullName);
+        console.log(this.fullName);
         return this.startName + "" + this.middleName + ""  + this.lastName;
 
     }
 };
 
-person.fullName ();
+console.log(person.fullName ());
