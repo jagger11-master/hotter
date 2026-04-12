@@ -11,7 +11,7 @@ name.forEach(name =>{
     })
 });
 console.log('nothig here still working on this ');
-*/
+
 // window in javascript 
 
 
@@ -23,15 +23,26 @@ function greet() {
     console.log(greet);
 
 }
+    
 
 
 const number = [2 , 4 ,5 , 6];
- let x = "" ;
+const number2 = number.map(meFunc);
 
- number.forEach(meFunc);
  
-    function meFunc(value){
-        x += value + "<br>"; 
-        console.log(value);
+    function meFunc(number2){
+         return number2 * 2; 
+         
  }
+ console.log(number2);
  
+*/
+
+const person = {
+    firstName: "emmanuel",
+    lastName: "hamis",
+    finalName: function () {
+        console.log(finalName);
+        return this.firstName + "" + this.lastName;
+    }
+};
