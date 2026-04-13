@@ -1,10 +1,10 @@
-const camerafeed = document.getElementById("cameraFeed")
+const cameraFeed = document.getElementById("cameraFeed");
 
-navigator.mediaDevices.getUserMedia((video:true));
+navigator.mediaDevices.getUserMedia({video: true})
 
 .then(stream => {
     cameraFeed.srcObject = stream;
 })
 .catch(error => {
-    console.errorr("error accessing camera",error);
+    console.errorr("Error accessing camera",error);
 });
