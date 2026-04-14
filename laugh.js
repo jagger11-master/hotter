@@ -1,12 +1,10 @@
-const person =  {
-    startName: "kelvin",
-    middleName: "Crey",
-    lastName: "emmaneul",
-    fullName: function() {
-        console.log(this.fullName);
-        return this.startName + "" + this.middleName + ""  + this.lastName;
+// function call in js
+const person1 = {name:"dotto"};
+const person2 = {name: "jagger"};
+const person3 = {name:"abel"};
 
-    }
-};
-
-console.log(person.fullName ());
+function greet(greeting) {
+    return greeting+ "" + this.name; 
+}
+greet.call(person3,"hello");
+console.log(person3);
