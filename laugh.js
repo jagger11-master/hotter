@@ -1,10 +1,36 @@
-// function call in js
-const person1 = {name:"dotto"};
-const person2 = {name: "jagger"};
-const person3 = {name:"abel"};
+async function getUserData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
-function greet(greeting) {
-    return greeting+ "" + this.name; 
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
 }
-greet.call(person3,"hello");
-console.log(person3);
+
+getUserData();
+
+
+const xhr = new XMLHttpRequest();
+
+xhr.open('GET', 'https://api.example.com/data', true);
+
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    const data = JSON.parse(xhr.responseText);
+    console.log(data);
+  } else {
+    console.error('Request failed with status:', xhr.status);
+  }
+};
+
+xhr.onerror = function() {
+  console.error('Network error occurred');
+};
+
+xhr.send();
